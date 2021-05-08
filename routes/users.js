@@ -3,11 +3,7 @@ var router = express.Router();
 
 
 const users=[];
-router.post('/score', function(req, res, next) {
-  const {score,userName}= req.body;
-  users.push({score: Number(score),userName});
-  res.send({success:true});
-});
+
 
 module.exports = router;
 
@@ -25,3 +21,11 @@ router.get('/', function(req, res, next) {
   }).slice(0,10)
 )
 });
+
+router.post('/score', function(req, res, next) {
+  const {score,userName}= req.body;
+  users.push({score: Number(score),userName});
+  res.send({success:true});
+});
+
+module.exports= router;
